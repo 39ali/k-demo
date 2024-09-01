@@ -458,11 +458,11 @@ export class Scene0 {
        
         // change these values to 0.0 to turn off individual effects
         float vertJerkOpt = 1.0;
-        float vertMovementOpt = 1.0;
+        float vertMovementOpt =  1.0;
         float bottomStaticOpt = 0.0;
         float scalinesOpt = 1.0;
-        float rgbOffsetOpt = 0.0;
-        float horzFuzzOpt = 1.0;
+        float rgbOffsetOpt = 0.7;
+        float horzFuzzOpt = 0.0;
 
         // Noise generation functions borrowed from: 
         // https://github.com/ashima/webgl-noise/blob/master/src/noise2D.glsl
@@ -535,6 +535,10 @@ export class Scene0 {
         return (1.0-step(snoise(vec2(5.0*pow(iTime,2.0)+pow(uv.x*7.0,1.2),pow((mod(iTime,100.0)+100.0)*uv.y*0.3+3.0,staticHeight))),staticAmount))*staticStrength;
         }
 
+        ///
+
+
+
         
         void main() {
         vec2 iResolution = vec2(400.,300.);
@@ -546,25 +550,9 @@ export class Scene0 {
             vec3 color  = diffuse.rgb*diffuse.a;
 
 
-            //  // Sample the original scene color
-            // vec4 originalColor = texture(map, uv / iResolution.xy);
-
-            // // Threshold to isolate bright parts
-            // float threshold = 0.8;
-            // vec3 brightParts = step(threshold, originalColor.rgb);
-
-            // // Blur the bright parts
-            // vec3 blurredBrightParts = vec3(0.0);
-            // float blurSize = 1.0;
-            // for(float i = -4.0; i <= 4.0; i += 0.5) {
-            //     for(float j = -4.0; j <= 4.0; j += 0.5) {
-            //         vec2 offset = vec2(i, j) * blurSize;
-            //         blurredBrightParts += texture(map, (uv + offset) / iResolution.xy).rgb;
-            //     }
-            // }
-            // blurredBrightParts /= 200.0;
-
-            	float jerkOffset = (1.0-step(snoise(vec2(iTime*1.3,5.0)),0.8))*0.05;
+         
+            //warpe
+            float jerkOffset = (1.0-step(snoise(vec2(iTime*1.3,5.0)),0.8))*0.05;
 	
             float fuzzOffset = snoise(vec2(iTime*15.0,uv.y*80.0))*0.003;
             float largeFuzzOffset = snoise(vec2(iTime*1.0,uv.y*25.0))*0.004;
@@ -595,6 +583,8 @@ export class Scene0 {
             vec3 color_crt = vec3(red,green,blue);
             float scanline = sin(uv.y*800.0)*0.04*scalinesOpt;
             color_crt -= scanline;
+            //
+            
      
             gl_FragColor = vec4(color_crt+0.05, 1.0);
 

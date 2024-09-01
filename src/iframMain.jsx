@@ -54,7 +54,8 @@ function App() {
 
     document.getElementById("gamelogo").addEventListener("click", () => {
       console.log("logo clicked ", chosen_game)
-      window.parent.run_game(chosen_game)
+      if (chosen_game !== "")
+        window.parent.run_game(chosen_game)
     })
 
   })
