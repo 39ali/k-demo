@@ -1,0 +1,11 @@
+Model Information:
+* title:	Tesla Cybertruck (Low-Poly)
+* source:	https://sketchfab.com/3d-models/tesla-cybertruck-low-poly-9f97b6be84d7471380d6f8ca67da5f1f
+* author:	Icosagon (https://sketchfab.com/Icosagon)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Tesla Cybertruck (Low-Poly)" (https://sketchfab.com/3d-models/tesla-cybertruck-low-poly-9f97b6be84d7471380d6f8ca67da5f1f) by Icosagon (https://sketchfab.com/Icosagon) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
